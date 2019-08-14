@@ -22,10 +22,10 @@ function add(scheme) {
 }
 
 function findSteps(id) {
-  return db('posts as p')
-    .innerJoin('users as u', 'p.user_id', '=', 'u.id')
-    .select('p.id', 'p.contents', 'u.username as postedBy')
-    .where({ user_id: id });
+  return db('schemes as s')
+    .innerJoin('steps as t', 's.id', '=', 't.scheme_id')
+    .select('s.id', 's.scheme_name', 't.step_number', 't.instructions')
+    .where({ scheme_id: id });
 }
 
 function update(changes, id) {
