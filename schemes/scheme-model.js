@@ -4,7 +4,7 @@ module.exports = {
   find,
   findById,
   // findSteps,
-  // add,
+  add,
   // update,
   // remove,
 };
@@ -16,9 +16,9 @@ function findById(id) {
   return db('schemes').where({ id });
 }
 
-// function add(user) {
-//   return db('users').insert(user);
-// }
+function add(scheme) {
+  return db('schemes').insert(scheme);
+}
 
 // function getUserPosts(id) {
 //   return db('posts as p')
