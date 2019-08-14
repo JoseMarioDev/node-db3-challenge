@@ -23,8 +23,8 @@ function add(scheme) {
 
 function findSteps(id) {
   return db('schemes as s')
-    .innerJoin('steps as t', 's.id', '=', 't.scheme_id')
-    .select('s.id', 's.scheme_name', 't.step_number', 't.instructions')
+    .innerJoin('steps as st', 's.id', '=', 'st.scheme_id')
+    .select('s.id', 's.scheme_name', 'st.step_number', 'st.instructions')
     .where({ scheme_id: id });
 }
 
